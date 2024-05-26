@@ -1,0 +1,23 @@
+# build image that includes all dependencies by executing the command from the root folder of the repository
+docker build -t continual-dr-img	 -f docker/Dockerfile .
+
+# set the DISPLAY variable to the desired display if needed and run xhost + local to allow starting of the simulator from within the container on linux)
+
+export DISPLAY=":0"
+xhost + local:
+
+# use the below command to start a container and run the experiment, execute it from the root folder of the repository and adjust the paths of -v if necessary 
+
+docker run  --rm -it \
+            --name continual-dr-container \
+            --gpus all \
+            -e DISPLAY \
+            -v $(pwd):/home/continual-dr:rw \
+            --privileged \
+            --network host \
+            continual-dr-img:latest \
+            bash -c "cd  /home/continual-dr/ && python3 scripts/run_experiment.py"
+
+
+
+

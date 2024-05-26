@@ -1,0 +1,9 @@
+[submodule "simulator/VTPRL"]
+	path = simulator/VTPRL
+	url = https://github.com/tum-i6/VTPRL.git
+	branch = cdr_publication
+
+[submodule "external/stable-baselines3"]
+	path = external/stable-baselines3
+	url = https://github.com/DLR-RM/stable-baselines3.git
+        branch = 6b8905acdb27e7b2acd036efc918818cc7ee3e20
