@@ -38,6 +38,8 @@ Then, to run the experiment from inside the container, run:
 
 This will start the experiment and start creating log data in the _experiments_/[reacher/grasper] folder. If you rerun the experiment, first delete the files/folders from a previous run.
 
+For a simple example, you can check and run _the scripts/example.py_ script.
+
 ## Model Evaluation
 
 To check the performance of a single model, you can use the _evaluate_model.py_ script from the repository root folder and provide the model path through the -mp parameter, for example: 
